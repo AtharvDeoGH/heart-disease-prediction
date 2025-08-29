@@ -107,7 +107,7 @@ X_new = pd.read_csv("data/cardio_train.csv").drop(columns=["cardio"])  # replace
 proba = bst.predict(X_new, num_iteration=bst.best_iteration)
 pd.DataFrame({"risk_probability": proba}).to_csv("predictions.csv", index=False)
 print("Wrote predictions.csv")
-
+```
 ## Modeling notes
 - **Baselines:** Logistic Regression (probabilistic, interpretable), Decision Tree (non‑linear, visual), KNN (non‑parametric).
 - **Ensembles:** Random Forest (reduced variance), XGBoost (regularized boosting), **LightGBM** (fast, accurate; strong candidate for production).
